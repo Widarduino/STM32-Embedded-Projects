@@ -1,3 +1,10 @@
+/* 
+ Uses STM32F103xx data sheet to manually define the registers and flip the coorespnding 
+ bits to enable microcontroller peripherals based on the function of the register
+ */
+
+
+
 #define PERIPH_BASE (0x40000000UL)
 #define GPIOC_BASE_OFFSET (0x11000UL)
 #define GPIOC_BASE (PERIPH_BASE + GPIOC_BASE_OFFSET)
@@ -14,7 +21,7 @@
 
 int main() {
 
-  // objective enable pin C13
+// objective enable pin C13
 
   // GPIO Bus is APB2
   RCC_APB2ENR |= (1U << 4);

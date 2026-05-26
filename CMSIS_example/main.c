@@ -1,3 +1,12 @@
+/* 
+ this CMSIS libraries introduce a standardization to all ARM microcontrollers and 
+ how registers are defined to make code more readable and organized. this is functionally
+ the same as REGISTERMANIP however it uses CMSIS libs rather than manually bitmasking
+ registers
+ */
+
+
+
 #include "stm32f103x6.h"
 
 int main() {

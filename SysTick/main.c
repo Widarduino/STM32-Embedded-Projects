@@ -1,3 +1,9 @@
+/* 
+ Systick is used for simple delays, RTOS ticks, periodic interupts
+ inherent to all arm microcontrollers, clock source is configurable and
+ may be reference to external peripherals
+ */
+
 #include "SysTick.h"
 #include "stm32f103x6.h"
 

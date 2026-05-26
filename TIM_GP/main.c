@@ -1,3 +1,12 @@
+/* 
+ The TIMER peripherals are more desirable for precise delays, measurement
+ PWM generation and I/O capture from sensors. As opposed to Systick this is limited
+ to the chips onboard peripherals. The timer precision is attributed to the fact that 
+ the original clock can undergo several stages of prescaling to enable granular control over the
+ periphal
+ */
+
+
 #include "TIM.h"
 #include "stm32f103x6.h"
 
