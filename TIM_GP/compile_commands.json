@@ -1,0 +1,38 @@
+[
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-IChip_Headers/CMSIS/Device/ST/STM32F1xx/Include/",
+      "-IChip_Headers/CMSIS/Include/",
+      "-IChip_Headers/inc/",
+      "-o",
+      "main.o",
+      "main.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/TIM_GP",
+    "file": "/home/widar/EmbeddedProjects/TIM_GP/main.c",
+    "output": "/home/widar/EmbeddedProjects/TIM_GP/main.o"
+  },
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-IChip_Headers/CMSIS/Device/ST/STM32F1xx/Include/",
+      "-IChip_Headers/CMSIS/Include/",
+      "-IChip_Headers/inc/",
+      "-o",
+      "stm32f103_startscrtch.o",
+      "stm32f103_startscrtch.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/TIM_GP",
+    "file": "/home/widar/EmbeddedProjects/TIM_GP/stm32f103_startscrtch.c",
+    "output": "/home/widar/EmbeddedProjects/TIM_GP/stm32f103_startscrtch.o"
+  }
+]

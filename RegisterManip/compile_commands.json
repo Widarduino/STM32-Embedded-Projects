@@ -1,0 +1,32 @@
+[
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-o",
+      "main.o",
+      "main.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/RegisterManip",
+    "file": "/home/widar/EmbeddedProjects/RegisterManip/main.c",
+    "output": "/home/widar/EmbeddedProjects/RegisterManip/main.o"
+  },
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-o",
+      "stm32f103_startscrtch.o",
+      "stm32f103_startscrtch.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/RegisterManip",
+    "file": "/home/widar/EmbeddedProjects/RegisterManip/stm32f103_startscrtch.c",
+    "output": "/home/widar/EmbeddedProjects/RegisterManip/stm32f103_startscrtch.o"
+  }
+]
