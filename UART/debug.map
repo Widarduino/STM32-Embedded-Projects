@@ -1,0 +1,152 @@
+
+There are no discarded input sections
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00010000         xr
+SRAM             0x20000000         0x00005000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD main.o
+LOAD stm32f103_startscrtch.o
+                0x20005000                        _estack = (ORIGIN (SRAM) + LENGTH (SRAM))
+
+.text           0x08000000      0x3ac
+                0x08000000                        . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x08000000       0xec stm32f103_startscrtch.o
+                0x08000000                vector_tbl
+ *(.text)
+ .text          0x080000ec      0x224 main.o
+                0x080000ec                EnableGPIO13
+                0x08000124                DEBUG_LED_ON
+                0x0800013c                DEBUG_LED_OFF
+                0x08000154                Enable_1S_TIMER
+                0x08000190                uart_enable
+                0x0800021c                calculate_BRR
+                0x08000248                uart_send_str
+                0x08000272                uart_write
+                0x0800029c                main
+                0x080002c8                delayS
+ .text          0x08000310       0x8c stm32f103_startscrtch.o
+                0x08000310                EXTI2_IRQHandler
+                0x08000310                DebugMon_Handler
+                0x08000310                TIM1_CC_IRQHandler
+                0x08000310                HardFault_Handler
+                0x08000310                SysTick_Handler
+                0x08000310                PVD_IRQHandler
+                0x08000310                PendSV_Handler
+                0x08000310                NMI_Handler
+                0x08000310                EXTI3_IRQHandler
+                0x08000310                EXTI0_IRQHandler
+                0x08000310                I2C2_EV_IRQHandler
+                0x08000310                UsageFault_Handler
+                0x08000310                ADC1_2_IRQHandler
+                0x08000310                SPI1_IRQHandler
+                0x08000310                TAMPER_IRQHandler
+                0x08000310                DMA1_Channel4_IRQHandler
+                0x08000310                USART3_IRQHandler
+                0x08000310                RTC_IRQHandler
+                0x08000310                DMA1_Channel7_IRQHandler
+                0x08000310                CAN1_RX1_IRQHandler
+                0x08000310                TIM4_IRQHandler
+                0x08000310                I2C1_EV_IRQHandler
+                0x08000310                DMA1_Channel6_IRQHandler
+                0x08000310                TIM3_IRQHandler
+                0x08000310                RCC_IRQHandler
+                0x08000310                TIM1_TRG_COM_IRQHandler
+                0x08000310                DMA1_Channel1_IRQHandler
+                0x08000310                Default_Handler
+                0x08000310                EXTI15_10_IRQHandler
+                0x08000310                EXTI9_5_IRQHandler
+                0x08000310                SPI2_IRQHandler
+                0x08000310                MemManage_Handler
+                0x08000310                SVC_Handler
+                0x08000310                DMA1_Channel5_IRQHandler
+                0x08000310                EXTI4_IRQHandler
+                0x08000310                USB_LP_CAN1_RX0_IRQHandler
+                0x08000310                USB_HP_CAN1_TX_IRQHandler
+                0x08000310                DMA1_Channel3_IRQHandler
+                0x08000310                TIM1_UP_IRQHandler
+                0x08000310                WWDG_IRQHandler
+                0x08000310                TIM2_IRQHandler
+                0x08000310                TIM1_BRK_IRQHandler
+                0x08000310                EXTI1_IRQHandler
+                0x08000310                RTCAlarm_IRQHandler
+                0x08000310                USART2_IRQHandler
+                0x08000310                I2C2_ER_IRQHandler
+                0x08000310                DMA1_Channel2_IRQHandler
+                0x08000310                CAN1_SCE_IRQHandler
+                0x08000310                FLASH_IRQHandler
+                0x08000310                BusFault_Handler
+                0x08000310                USART1_IRQHandler
+                0x08000310                I2C1_ER_IRQHandler
+                0x08000310                USBWakeUp_IRQHandler
+                0x08000316                Reset_Handler
+ *(.text*)
+ *(.rodata)
+ .rodata        0x0800039c       0x10 main.o
+ *(.rodata*)
+                0x080003ac                        . = ALIGN (0x4)
+                0x080003ac                        _etext = .
+                0x080003ac                        _sidata = LOADADDR (.data)
+
+.glue_7         0x080003ac        0x0
+ .glue_7        0x080003ac        0x0 linker stubs
+
+.glue_7t        0x080003ac        0x0
+ .glue_7t       0x080003ac        0x0 linker stubs
+
+.vfp11_veneer   0x080003ac        0x0
+ .vfp11_veneer  0x080003ac        0x0 linker stubs
+
+.v4_bx          0x080003ac        0x0
+ .v4_bx         0x080003ac        0x0 linker stubs
+
+.iplt           0x080003ac        0x0
+ .iplt          0x080003ac        0x0 main.o
+
+.rel.dyn        0x080003ac        0x0
+ .rel.iplt      0x080003ac        0x0 main.o
+
+.data           0x20000000        0x0 load address 0x080003ac
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sdata = .
+ *(.data)
+ .data          0x20000000        0x0 main.o
+ .data          0x20000000        0x0 stm32f103_startscrtch.o
+ *(.data*)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _edata = .
+
+.igot.plt       0x20000000        0x0 load address 0x080003ac
+ .igot.plt      0x20000000        0x0 main.o
+
+.bss            0x20000000        0x0 load address 0x080003ac
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sbss = .
+ *(.bss)
+ .bss           0x20000000        0x0 main.o
+ .bss           0x20000000        0x0 stm32f103_startscrtch.o
+ *(.bss*)
+ *(COMMON)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _ebss = .
+OUTPUT(run.elf elf32-littlearm)
+LOAD linker stubs
+
+.comment        0x00000000       0x45
+ .comment       0x00000000       0x45 main.o
+                                 0x46 (size before relaxing)
+ .comment       0x00000045        0x0 stm32f103_startscrtch.o
+                                 0x46 (size before relaxing)
+
+.ARM.attributes
+                0x00000000       0x2d
+ .ARM.attributes
+                0x00000000       0x2d main.o
+ .ARM.attributes
+                0x0000002d       0x2d stm32f103_startscrtch.o
