@@ -13,4 +13,10 @@ void Enable_1S_TIMER() {
   TIM1->CR1 = TIM_CR1_CEN;
 }
 
+void delayS(int cycles){
+  for (int i = 0; i < cycles; i++) {
+    while (!(TIM1->SR & TIM_SR_UIF)) { } // while both are zero hold for 1ms
+    TIM1->SR &= ~TIM_SR_UIF; // reset the bit
+  }
+}
 #endif
