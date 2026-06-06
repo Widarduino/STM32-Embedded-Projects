@@ -1,0 +1,92 @@
+[
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-Iinclude/CMSIS/Device/ST/STM32F1xx/Include/",
+      "-Iinclude/CMSIS/Include/",
+      "-Isrc/Drivers/",
+      "-o",
+      "obj/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/6.5_SPI_RECEIVER",
+    "file": "/home/widar/EmbeddedProjects/6.5_SPI_RECEIVER/src/main.c",
+    "output": "/home/widar/EmbeddedProjects/6.5_SPI_RECEIVER/obj/main.o"
+  },
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-Iinclude/CMSIS/Device/ST/STM32F1xx/Include/",
+      "-Iinclude/CMSIS/Include/",
+      "-Isrc/Drivers/",
+      "-o",
+      "obj/stm32f103_startscrtch.o",
+      "src/stm32f103_startscrtch.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/6.5_SPI_RECEIVER",
+    "file": "/home/widar/EmbeddedProjects/6.5_SPI_RECEIVER/src/stm32f103_startscrtch.c",
+    "output": "/home/widar/EmbeddedProjects/6.5_SPI_RECEIVER/obj/stm32f103_startscrtch.o"
+  },
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-Iinclude/CMSIS/Device/ST/STM32F1xx/Include/",
+      "-Iinclude/CMSIS/Include/",
+      "-Isrc/Drivers/",
+      "-o",
+      "obj/Drivers/GPIO.o",
+      "src/Drivers/GPIO.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/6.5_SPI_RECEIVER",
+    "file": "/home/widar/EmbeddedProjects/6.5_SPI_RECEIVER/src/Drivers/GPIO.c",
+    "output": "/home/widar/EmbeddedProjects/6.5_SPI_RECEIVER/obj/Drivers/GPIO.o"
+  },
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-Iinclude/CMSIS/Device/ST/STM32F1xx/Include/",
+      "-Iinclude/CMSIS/Include/",
+      "-Isrc/Drivers/",
+      "-o",
+      "obj/Drivers/SPI.o",
+      "src/Drivers/SPI.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/6.5_SPI_RECEIVER",
+    "file": "/home/widar/EmbeddedProjects/6.5_SPI_RECEIVER/src/Drivers/SPI.c",
+    "output": "/home/widar/EmbeddedProjects/6.5_SPI_RECEIVER/obj/Drivers/SPI.o"
+  },
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-Iinclude/CMSIS/Device/ST/STM32F1xx/Include/",
+      "-Iinclude/CMSIS/Include/",
+      "-Isrc/Drivers/",
+      "-o",
+      "obj/Drivers/UART.o",
+      "src/Drivers/UART.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/6.5_SPI_RECEIVER",
+    "file": "/home/widar/EmbeddedProjects/6.5_SPI_RECEIVER/src/Drivers/UART.c",
+    "output": "/home/widar/EmbeddedProjects/6.5_SPI_RECEIVER/obj/Drivers/UART.o"
+  }
+]
