@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-Iinclude/CMSIS/Device/ST/STM32F1xx/Include/",
+      "-Iinclude/CMSIS/Include/",
+      "-Isrc/Drivers/",
+      "-o",
+      "obj/Drivers/SPI.o",
+      "src/Drivers/SPI.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/6_SPI_Serial",
+    "file": "/home/widar/EmbeddedProjects/6_SPI_Serial/src/Drivers/SPI.c",
+    "output": "/home/widar/EmbeddedProjects/6_SPI_Serial/obj/Drivers/SPI.o"
+  }
+]

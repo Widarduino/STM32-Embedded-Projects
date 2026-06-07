@@ -5,8 +5,8 @@
 void SPI1_CLOCK_EN(void) { RCC->APB2ENR |= (RCC_APB2ENR_SPI1EN | RCC_APB2ENR_IOPAEN);}
 
 void SPI1_PORT_EN(void) {
-  GPIOA->CRL &= ~(GPIO_CRL_CNF4 | GPIO_CRL_MODE4 
-                | GPIO_CRL_CNF5 | GPIO_CRL_MODE5
+  GPIOA->CRL &= ~(
+                 GPIO_CRL_CNF5 | GPIO_CRL_MODE5
                 | GPIO_CRL_CNF6 | GPIO_CRL_MODE6 
                 | GPIO_CRL_CNF7 | GPIO_CRL_MODE7
                 | GPIO_CRL_CNF2 | GPIO_CRL_MODE2
@@ -23,8 +23,8 @@ void SPI1_PORT_EN(void) {
                  | GPIO_CRL_CNF7_1   // alternate push-pull
                                      // MISO (SPI_FULL_DUPLEX_MASTER)
                  | GPIO_CRL_CNF6_0   // input mode floating input
-                                     // NSS (SPI_HARDWARE_MASTER/SLAVE)
-                 | GPIO_CRL_CNF4_0); // input mode floating input
+                ); // nss is not used so not configured
+  
   // CR pin (A2)
   GPIOA->CRL |= (GPIO_CRL_MODE2_0); // 10Mhz  general push-pull
 
@@ -45,13 +45,17 @@ void SPI1_CONFIG(void) {
                  | SPI_CR1_CRCEN  // CRC Calculation disabled
                  | SPI_CR1_RXONLY // disable receive only (full duplex)
                  | SPI_CR1_DFF    // 8 bit data transactions
+                 | SPI_CR1_BR // reset field
+                 | SPI_CR1_CPOL | SPI_CR1_CPHA // reset field
   );
 
+
   SPI1->CR1 |= (SPI_CR1_LSBFIRST // LSB first
-                | SPI_CR1_BR_1   //  set baud rate to 8Mhz / 16 = 500Khz
-                | SPI_CR1_BR_0 | SPI_CR1_MSTR //  enable master mode
+                | SPI_CR1_BR_1   //  set baud rate to 8Mhz / 128 = 62500hz
+                | SPI_CR1_BR_2   //
+                | SPI_CR1_MSTR //  enable master mode
                 | SPI_CR1_SSM                 // Software controlled NSS
-                | SPI_CR1_SSI
+                | SPI_CR1_SSI // internal slave select
                 | SPI_CR1_CPOL | SPI_CR1_CPHA // SPI MODE_3
   );
 
@@ -59,12 +63,7 @@ void SPI1_CONFIG(void) {
                  SPI_CR2_TXDMAEN | SPI_CR2_RXDMAEN);
   // disable all interupts flags
 
-  SPI1->CR2 |=
-      (SPI_CR2_SSOE // NSS is pulled low when spi is enabled (single
-                    // slave/master config)
-       //* fix this ^ no longer relevant as we are controlling via software
-      );
-
+  SPI1->CR1 &= ~(SPI_CR1_SPE); // clear
   SPI1->CR1 |= (SPI_CR1_SPE); //  enable SPI
 }
 
@@ -75,17 +74,9 @@ void SPI1_SEND_BYTE(uint8_t data) {
   SPI1->DR = data; // write data
 }
 
-void SPI1_RECEIVE_BYTE(uint8_t *buffer) {
-  SPI1->DR = 0; // write dummy byte
-  while (!(SPI1->SR & (SPI_SR_RXNE))) {
-  } // ensures spi is not busy
-
-  *buffer = SPI1->DR; // reads for a byte
-}
-
 void SPI1_SEND_STRING(const char *str) {
   uint8_t temp;
-
+  CR_ENABLE();
   while (*str) {
     SPI1_SEND_BYTE(*str++);
   }
@@ -98,4 +89,7 @@ void SPI1_SEND_STRING(const char *str) {
   temp = SPI1->DR; // after sending data via the DR the slave sends it back via
   temp = SPI1->SR; // reading these resgisters clears the OVR flag (data not
                    // read in time)
+  CR_DISABLE();
 }
+
+

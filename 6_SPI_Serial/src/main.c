@@ -24,9 +24,6 @@ int main() {
 
   while (1) {
     // baudrate is currently at 500kHz
-    CR_ENABLE(); // pulls low
-    SPI1_SEND_STRING("SPI_PACK");
-    CR_DISABLE(); // pulls high
-    delayS(1);
+    SPI1_SEND_STRING("okay");
   }
 }

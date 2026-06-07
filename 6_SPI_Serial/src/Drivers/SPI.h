@@ -14,8 +14,6 @@ void CR_DISABLE(void);
 void CR_ENABLE(void);
 
 void SPI1_SEND_BYTE(uint8_t data);
-
-void SPI1_RECEIVE_BYTE(uint8_t *buffer);
 void SPI1_SEND_STRING(const char *str);
 
 #endif
