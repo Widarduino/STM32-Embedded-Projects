@@ -24,6 +24,7 @@ int main() {
   DEBUG_LED_ON();
   delayS(3);
   DEBUG_LED_OFF();
+  uart_send_str("DEBUG: USART FUNCTIONAL\r\n");
   delayS(1);
 
   uint8_t buffer[4] = {'N', 'U', 'L', 'L'};
@@ -32,15 +33,13 @@ int main() {
 
     if (!(GPIOA->IDR & GPIO_IDR_IDR1)) {
       DEBUG_LED_ON(); // when pulled low by master
-
       SPI1_RECEIVE_STRING(buffer, 4); // write 4 bytes into buffer
 
       for (int i = 0; i < 4; i++) {
         uart_write(buffer[i]); // write via uart (TX:pin A2)
       }
-
     } else {
-      DEBUG_LED_OFF();
+      uart_send_str("untriggered\r\n");
     }
   }
 }

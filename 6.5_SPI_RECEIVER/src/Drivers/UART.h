@@ -24,8 +24,9 @@ void uart_enable(void) {
   GPIOA->CRL |= (GPIO_CRL_CNF2_1);        // sets to alternate mode push-pull
 
  // USART2->BRR = calculate_BRR(BaudRate, System_Freq); // sets baud rate
-  USART2->BRR = 0x341; // manually setting for debugging
-  
+  USART2->BRR = 0x80; // manually setting for debugging
+                      // 625000 baud
+  //0x341 for 9600
   USART2->CR1 &= ~(USART_CR1_M | USART_CR1_PCE); // 1 start , 8 data no parity
   USART2->CR1 |= USART_CR1_TE;                     // transfer direction
   USART2->CR1 |= USART_CR1_UE;                     // enable module

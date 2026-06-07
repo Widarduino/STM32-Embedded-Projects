@@ -17,13 +17,13 @@ LOAD ./obj/Drivers/SPI.o
 LOAD ./obj/Drivers/UART.o
                 0x20005000                        _estack = (ORIGIN (SRAM) + LENGTH (SRAM))
 
-.text           0x08000000      0x560
+.text           0x08000000      0x5bc
                 0x08000000                        . = ALIGN (0x4)
  *(.isr_vector)
  .isr_vector    0x08000000       0xec ./obj/stm32f103_startscrtch.o
                 0x08000000                vector_tbl
  *(.text)
- .text          0x080000ec      0x1e0 ./obj/main.o
+ .text          0x080000ec      0x21c ./obj/main.o
                 0x080000ec                Enable_1S_TIMER
                 0x08000128                delayS
                 0x08000170                uart_enable
@@ -31,101 +31,103 @@ LOAD ./obj/Drivers/UART.o
                 0x08000228                uart_send_str
                 0x08000252                uart_write
                 0x08000280                main
- .text          0x080002cc       0x8c ./obj/stm32f103_startscrtch.o
-                0x080002cc                EXTI2_IRQHandler
-                0x080002cc                DebugMon_Handler
-                0x080002cc                TIM1_CC_IRQHandler
-                0x080002cc                HardFault_Handler
-                0x080002cc                SysTick_Handler
-                0x080002cc                PVD_IRQHandler
-                0x080002cc                PendSV_Handler
-                0x080002cc                NMI_Handler
-                0x080002cc                EXTI3_IRQHandler
-                0x080002cc                EXTI0_IRQHandler
-                0x080002cc                I2C2_EV_IRQHandler
-                0x080002cc                UsageFault_Handler
-                0x080002cc                ADC1_2_IRQHandler
-                0x080002cc                SPI1_IRQHandler
-                0x080002cc                TAMPER_IRQHandler
-                0x080002cc                DMA1_Channel4_IRQHandler
-                0x080002cc                USART3_IRQHandler
-                0x080002cc                RTC_IRQHandler
-                0x080002cc                DMA1_Channel7_IRQHandler
-                0x080002cc                CAN1_RX1_IRQHandler
-                0x080002cc                TIM4_IRQHandler
-                0x080002cc                I2C1_EV_IRQHandler
-                0x080002cc                DMA1_Channel6_IRQHandler
-                0x080002cc                TIM3_IRQHandler
-                0x080002cc                RCC_IRQHandler
-                0x080002cc                TIM1_TRG_COM_IRQHandler
-                0x080002cc                DMA1_Channel1_IRQHandler
-                0x080002cc                Default_Handler
-                0x080002cc                EXTI15_10_IRQHandler
-                0x080002cc                EXTI9_5_IRQHandler
-                0x080002cc                SPI2_IRQHandler
-                0x080002cc                MemManage_Handler
-                0x080002cc                SVC_Handler
-                0x080002cc                DMA1_Channel5_IRQHandler
-                0x080002cc                EXTI4_IRQHandler
-                0x080002cc                USB_LP_CAN1_RX0_IRQHandler
-                0x080002cc                USB_HP_CAN1_TX_IRQHandler
-                0x080002cc                DMA1_Channel3_IRQHandler
-                0x080002cc                TIM1_UP_IRQHandler
-                0x080002cc                WWDG_IRQHandler
-                0x080002cc                TIM2_IRQHandler
-                0x080002cc                TIM1_BRK_IRQHandler
-                0x080002cc                EXTI1_IRQHandler
-                0x080002cc                RTCAlarm_IRQHandler
-                0x080002cc                USART2_IRQHandler
-                0x080002cc                I2C2_ER_IRQHandler
-                0x080002cc                DMA1_Channel2_IRQHandler
-                0x080002cc                CAN1_SCE_IRQHandler
-                0x080002cc                FLASH_IRQHandler
-                0x080002cc                BusFault_Handler
-                0x080002cc                USART1_IRQHandler
-                0x080002cc                I2C1_ER_IRQHandler
-                0x080002cc                USBWakeUp_IRQHandler
-                0x080002d2                Reset_Handler
- .text          0x08000358       0x68 ./obj/Drivers/GPIO.o
-                0x08000358                EnableGPIO13
-                0x08000390                DEBUG_LED_ON
-                0x080003a8                DEBUG_LED_OFF
- .text          0x080003c0      0x1a0 ./obj/Drivers/SPI.o
-                0x080003c0                SPI1_CLOCK_EN
-                0x080003e0                SPI1_PORT_EN
-                0x0800041c                SPI1_CONFIG
-                0x0800046c                SPI1_SEND_BYTE
-                0x08000498                SPI1_RECEIVE_BYTE
-                0x080004d0                SPI1_SEND_STRING
-                0x08000524                SPI1_RECEIVE_STRING
-                0x0800054c                SPI1_Enable
- .text          0x08000560        0x0 ./obj/Drivers/UART.o
+ .text          0x08000308       0x8c ./obj/stm32f103_startscrtch.o
+                0x08000308                EXTI2_IRQHandler
+                0x08000308                DebugMon_Handler
+                0x08000308                TIM1_CC_IRQHandler
+                0x08000308                HardFault_Handler
+                0x08000308                SysTick_Handler
+                0x08000308                PVD_IRQHandler
+                0x08000308                PendSV_Handler
+                0x08000308                NMI_Handler
+                0x08000308                EXTI3_IRQHandler
+                0x08000308                EXTI0_IRQHandler
+                0x08000308                I2C2_EV_IRQHandler
+                0x08000308                UsageFault_Handler
+                0x08000308                ADC1_2_IRQHandler
+                0x08000308                SPI1_IRQHandler
+                0x08000308                TAMPER_IRQHandler
+                0x08000308                DMA1_Channel4_IRQHandler
+                0x08000308                USART3_IRQHandler
+                0x08000308                RTC_IRQHandler
+                0x08000308                DMA1_Channel7_IRQHandler
+                0x08000308                CAN1_RX1_IRQHandler
+                0x08000308                TIM4_IRQHandler
+                0x08000308                I2C1_EV_IRQHandler
+                0x08000308                DMA1_Channel6_IRQHandler
+                0x08000308                TIM3_IRQHandler
+                0x08000308                RCC_IRQHandler
+                0x08000308                TIM1_TRG_COM_IRQHandler
+                0x08000308                DMA1_Channel1_IRQHandler
+                0x08000308                Default_Handler
+                0x08000308                EXTI15_10_IRQHandler
+                0x08000308                EXTI9_5_IRQHandler
+                0x08000308                SPI2_IRQHandler
+                0x08000308                MemManage_Handler
+                0x08000308                SVC_Handler
+                0x08000308                DMA1_Channel5_IRQHandler
+                0x08000308                EXTI4_IRQHandler
+                0x08000308                USB_LP_CAN1_RX0_IRQHandler
+                0x08000308                USB_HP_CAN1_TX_IRQHandler
+                0x08000308                DMA1_Channel3_IRQHandler
+                0x08000308                TIM1_UP_IRQHandler
+                0x08000308                WWDG_IRQHandler
+                0x08000308                TIM2_IRQHandler
+                0x08000308                TIM1_BRK_IRQHandler
+                0x08000308                EXTI1_IRQHandler
+                0x08000308                RTCAlarm_IRQHandler
+                0x08000308                USART2_IRQHandler
+                0x08000308                I2C2_ER_IRQHandler
+                0x08000308                DMA1_Channel2_IRQHandler
+                0x08000308                CAN1_SCE_IRQHandler
+                0x08000308                FLASH_IRQHandler
+                0x08000308                BusFault_Handler
+                0x08000308                USART1_IRQHandler
+                0x08000308                I2C1_ER_IRQHandler
+                0x08000308                USBWakeUp_IRQHandler
+                0x0800030e                Reset_Handler
+ .text          0x08000394       0x68 ./obj/Drivers/GPIO.o
+                0x08000394                EnableGPIO13
+                0x080003cc                DEBUG_LED_ON
+                0x080003e4                DEBUG_LED_OFF
+ .text          0x080003fc      0x194 ./obj/Drivers/SPI.o
+                0x080003fc                SPI1_CLOCK_EN
+                0x0800041c                SPI1_PORT_EN
+                0x08000458                SPI1_CONFIG
+                0x0800049c                SPI1_SEND_BYTE
+                0x080004c8                SPI1_SEND_STRING
+                0x0800051c                SPI1_RECEIVE_BYTE
+                0x0800054c                SPI1_RECEIVE_STRING
+                0x0800057a                SPI1_Enable
+ .text          0x08000590        0x0 ./obj/Drivers/UART.o
  *(.text*)
  *(.rodata)
+ .rodata        0x08000590       0x2a ./obj/main.o
  *(.rodata*)
-                0x08000560                        . = ALIGN (0x4)
-                0x08000560                        _etext = .
-                0x08000560                        _sidata = LOADADDR (.data)
+                0x080005bc                        . = ALIGN (0x4)
+ *fill*         0x080005ba        0x2 
+                0x080005bc                        _etext = .
+                0x080005bc                        _sidata = LOADADDR (.data)
 
-.glue_7         0x08000560        0x0
- .glue_7        0x08000560        0x0 linker stubs
+.glue_7         0x080005bc        0x0
+ .glue_7        0x080005bc        0x0 linker stubs
 
-.glue_7t        0x08000560        0x0
- .glue_7t       0x08000560        0x0 linker stubs
+.glue_7t        0x080005bc        0x0
+ .glue_7t       0x080005bc        0x0 linker stubs
 
-.vfp11_veneer   0x08000560        0x0
- .vfp11_veneer  0x08000560        0x0 linker stubs
+.vfp11_veneer   0x080005bc        0x0
+ .vfp11_veneer  0x080005bc        0x0 linker stubs
 
-.v4_bx          0x08000560        0x0
- .v4_bx         0x08000560        0x0 linker stubs
+.v4_bx          0x080005bc        0x0
+ .v4_bx         0x080005bc        0x0 linker stubs
 
-.iplt           0x08000560        0x0
- .iplt          0x08000560        0x0 ./obj/main.o
+.iplt           0x080005bc        0x0
+ .iplt          0x080005bc        0x0 ./obj/main.o
 
-.rel.dyn        0x08000560        0x0
- .rel.iplt      0x08000560        0x0 ./obj/main.o
+.rel.dyn        0x080005bc        0x0
+ .rel.iplt      0x080005bc        0x0 ./obj/main.o
 
-.data           0x20000000        0x0 load address 0x08000560
+.data           0x20000000        0x0 load address 0x080005bc
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -138,10 +140,10 @@ LOAD ./obj/Drivers/UART.o
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _edata = .
 
-.igot.plt       0x20000000        0x0 load address 0x08000560
+.igot.plt       0x20000000        0x0 load address 0x080005bc
  .igot.plt      0x20000000        0x0 ./obj/main.o
 
-.bss            0x20000000        0x0 load address 0x08000560
+.bss            0x20000000        0x0 load address 0x080005bc
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sbss = .
  *(.bss)
