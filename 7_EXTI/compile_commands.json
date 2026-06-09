@@ -34,5 +34,23 @@
     "directory": "/home/widar/EmbeddedProjects/7_EXTI",
     "file": "/home/widar/EmbeddedProjects/7_EXTI/src/Drivers/EXTI.c",
     "output": "/home/widar/EmbeddedProjects/7_EXTI/obj/Drivers/EXTI.o"
+  },
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-Iinclude/CMSIS/Device/ST/STM32F1xx/Include/",
+      "-Iinclude/CMSIS/Include/",
+      "-Isrc/Drivers/",
+      "-o",
+      "obj/Drivers/GPIO.o",
+      "src/Drivers/GPIO.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/7_EXTI",
+    "file": "/home/widar/EmbeddedProjects/7_EXTI/src/Drivers/GPIO.c",
+    "output": "/home/widar/EmbeddedProjects/7_EXTI/obj/Drivers/GPIO.o"
   }
 ]

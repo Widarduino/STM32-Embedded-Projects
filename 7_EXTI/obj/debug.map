@@ -16,103 +16,103 @@ LOAD ./obj/Drivers/EXTI.o
 LOAD ./obj/Drivers/GPIO.o
                 0x20005000                        _estack = (ORIGIN (SRAM) + LENGTH (SRAM))
 
-.text           0x08000000      0x298
+.text           0x08000000      0x3a0
                 0x08000000                        . = ALIGN (0x4)
  *(.isr_vector)
  .isr_vector    0x08000000       0xec ./obj/stm32f103_startscrtch.o
                 0x08000000                vector_tbl
  *(.text)
- .text          0x080000ec       0xa8 ./obj/main.o
+ .text          0x080000ec      0x100 ./obj/main.o
                 0x080000ec                Enable_1S_TIMER
                 0x08000128                delayS
                 0x08000170                main
- .text          0x08000194       0x8c ./obj/stm32f103_startscrtch.o
-                0x08000194                EXTI2_IRQHandler
-                0x08000194                DebugMon_Handler
-                0x08000194                TIM1_CC_IRQHandler
-                0x08000194                HardFault_Handler
-                0x08000194                SysTick_Handler
-                0x08000194                PVD_IRQHandler
-                0x08000194                PendSV_Handler
-                0x08000194                NMI_Handler
-                0x08000194                EXTI3_IRQHandler
-                0x08000194                EXTI0_IRQHandler
-                0x08000194                I2C2_EV_IRQHandler
-                0x08000194                UsageFault_Handler
-                0x08000194                ADC1_2_IRQHandler
-                0x08000194                SPI1_IRQHandler
-                0x08000194                TAMPER_IRQHandler
-                0x08000194                DMA1_Channel4_IRQHandler
-                0x08000194                USART3_IRQHandler
-                0x08000194                RTC_IRQHandler
-                0x08000194                DMA1_Channel7_IRQHandler
-                0x08000194                CAN1_RX1_IRQHandler
-                0x08000194                TIM4_IRQHandler
-                0x08000194                I2C1_EV_IRQHandler
-                0x08000194                DMA1_Channel6_IRQHandler
-                0x08000194                TIM3_IRQHandler
-                0x08000194                RCC_IRQHandler
-                0x08000194                TIM1_TRG_COM_IRQHandler
-                0x08000194                DMA1_Channel1_IRQHandler
-                0x08000194                Default_Handler
-                0x08000194                EXTI15_10_IRQHandler
-                0x08000194                EXTI9_5_IRQHandler
-                0x08000194                SPI2_IRQHandler
-                0x08000194                MemManage_Handler
-                0x08000194                SVC_Handler
-                0x08000194                DMA1_Channel5_IRQHandler
-                0x08000194                EXTI4_IRQHandler
-                0x08000194                USB_LP_CAN1_RX0_IRQHandler
-                0x08000194                USB_HP_CAN1_TX_IRQHandler
-                0x08000194                DMA1_Channel3_IRQHandler
-                0x08000194                TIM1_UP_IRQHandler
-                0x08000194                WWDG_IRQHandler
-                0x08000194                TIM2_IRQHandler
-                0x08000194                TIM1_BRK_IRQHandler
-                0x08000194                EXTI1_IRQHandler
-                0x08000194                RTCAlarm_IRQHandler
-                0x08000194                USART2_IRQHandler
-                0x08000194                I2C2_ER_IRQHandler
-                0x08000194                DMA1_Channel2_IRQHandler
-                0x08000194                CAN1_SCE_IRQHandler
-                0x08000194                FLASH_IRQHandler
-                0x08000194                BusFault_Handler
-                0x08000194                USART1_IRQHandler
-                0x08000194                I2C1_ER_IRQHandler
-                0x08000194                USBWakeUp_IRQHandler
-                0x0800019a                Reset_Handler
- .text          0x08000220       0x10 ./obj/Drivers/EXTI.o
-                0x08000220                initEXTI
- .text          0x08000230       0x68 ./obj/Drivers/GPIO.o
-                0x08000230                EnableGPIO13
-                0x08000268                DEBUG_LED_ON
-                0x08000280                DEBUG_LED_OFF
+                0x080001c4                EXTI2_IRQHandler
+ .text          0x080001ec       0x8c ./obj/stm32f103_startscrtch.o
+                0x080001ec                DebugMon_Handler
+                0x080001ec                TIM1_CC_IRQHandler
+                0x080001ec                HardFault_Handler
+                0x080001ec                SysTick_Handler
+                0x080001ec                PVD_IRQHandler
+                0x080001ec                PendSV_Handler
+                0x080001ec                NMI_Handler
+                0x080001ec                EXTI3_IRQHandler
+                0x080001ec                EXTI0_IRQHandler
+                0x080001ec                I2C2_EV_IRQHandler
+                0x080001ec                UsageFault_Handler
+                0x080001ec                ADC1_2_IRQHandler
+                0x080001ec                SPI1_IRQHandler
+                0x080001ec                TAMPER_IRQHandler
+                0x080001ec                DMA1_Channel4_IRQHandler
+                0x080001ec                USART3_IRQHandler
+                0x080001ec                RTC_IRQHandler
+                0x080001ec                DMA1_Channel7_IRQHandler
+                0x080001ec                CAN1_RX1_IRQHandler
+                0x080001ec                TIM4_IRQHandler
+                0x080001ec                I2C1_EV_IRQHandler
+                0x080001ec                DMA1_Channel6_IRQHandler
+                0x080001ec                TIM3_IRQHandler
+                0x080001ec                RCC_IRQHandler
+                0x080001ec                TIM1_TRG_COM_IRQHandler
+                0x080001ec                DMA1_Channel1_IRQHandler
+                0x080001ec                Default_Handler
+                0x080001ec                EXTI15_10_IRQHandler
+                0x080001ec                EXTI9_5_IRQHandler
+                0x080001ec                SPI2_IRQHandler
+                0x080001ec                MemManage_Handler
+                0x080001ec                SVC_Handler
+                0x080001ec                DMA1_Channel5_IRQHandler
+                0x080001ec                EXTI4_IRQHandler
+                0x080001ec                USB_LP_CAN1_RX0_IRQHandler
+                0x080001ec                USB_HP_CAN1_TX_IRQHandler
+                0x080001ec                DMA1_Channel3_IRQHandler
+                0x080001ec                TIM1_UP_IRQHandler
+                0x080001ec                WWDG_IRQHandler
+                0x080001ec                TIM2_IRQHandler
+                0x080001ec                TIM1_BRK_IRQHandler
+                0x080001ec                EXTI1_IRQHandler
+                0x080001ec                RTCAlarm_IRQHandler
+                0x080001ec                USART2_IRQHandler
+                0x080001ec                I2C2_ER_IRQHandler
+                0x080001ec                DMA1_Channel2_IRQHandler
+                0x080001ec                CAN1_SCE_IRQHandler
+                0x080001ec                FLASH_IRQHandler
+                0x080001ec                BusFault_Handler
+                0x080001ec                USART1_IRQHandler
+                0x080001ec                I2C1_ER_IRQHandler
+                0x080001ec                USBWakeUp_IRQHandler
+                0x080001f2                Reset_Handler
+ .text          0x08000278       0xc0 ./obj/Drivers/EXTI.o
+                0x080002b0                initEXTI
+ .text          0x08000338       0x68 ./obj/Drivers/GPIO.o
+                0x08000338                EnableGPIO13
+                0x08000370                DEBUG_LED_ON
+                0x08000388                DEBUG_LED_OFF
  *(.text*)
  *(.rodata)
  *(.rodata*)
-                0x08000298                        . = ALIGN (0x4)
-                0x08000298                        _etext = .
-                0x08000298                        _sidata = LOADADDR (.data)
+                0x080003a0                        . = ALIGN (0x4)
+                0x080003a0                        _etext = .
+                0x080003a0                        _sidata = LOADADDR (.data)
 
-.glue_7         0x08000298        0x0
- .glue_7        0x08000298        0x0 linker stubs
+.glue_7         0x080003a0        0x0
+ .glue_7        0x080003a0        0x0 linker stubs
 
-.glue_7t        0x08000298        0x0
- .glue_7t       0x08000298        0x0 linker stubs
+.glue_7t        0x080003a0        0x0
+ .glue_7t       0x080003a0        0x0 linker stubs
 
-.vfp11_veneer   0x08000298        0x0
- .vfp11_veneer  0x08000298        0x0 linker stubs
+.vfp11_veneer   0x080003a0        0x0
+ .vfp11_veneer  0x080003a0        0x0 linker stubs
 
-.v4_bx          0x08000298        0x0
- .v4_bx         0x08000298        0x0 linker stubs
+.v4_bx          0x080003a0        0x0
+ .v4_bx         0x080003a0        0x0 linker stubs
 
-.iplt           0x08000298        0x0
- .iplt          0x08000298        0x0 ./obj/main.o
+.iplt           0x080003a0        0x0
+ .iplt          0x080003a0        0x0 ./obj/main.o
 
-.rel.dyn        0x08000298        0x0
- .rel.iplt      0x08000298        0x0 ./obj/main.o
+.rel.dyn        0x080003a0        0x0
+ .rel.iplt      0x080003a0        0x0 ./obj/main.o
 
-.data           0x20000000        0x0 load address 0x08000298
+.data           0x20000000        0x0 load address 0x080003a0
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -124,10 +124,10 @@ LOAD ./obj/Drivers/GPIO.o
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _edata = .
 
-.igot.plt       0x20000000        0x0 load address 0x08000298
+.igot.plt       0x20000000        0x0 load address 0x080003a0
  .igot.plt      0x20000000        0x0 ./obj/main.o
 
-.bss            0x20000000        0x0 load address 0x08000298
+.bss            0x20000000        0x0 load address 0x080003a0
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sbss = .
  *(.bss)
