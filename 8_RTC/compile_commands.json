@@ -1,0 +1,20 @@
+[
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-Iinclude/CMSIS/Device/ST/STM32F1xx/Include/",
+      "-Iinclude/CMSIS/Include/",
+      "-Isrc/Drivers/",
+      "-o",
+      "obj/Drivers/RTC.o",
+      "src/Drivers/RTC.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/8_RTC",
+    "file": "/home/widar/EmbeddedProjects/8_RTC/src/Drivers/RTC.c",
+    "output": "/home/widar/EmbeddedProjects/8_RTC/obj/Drivers/RTC.o"
+  }
+]
