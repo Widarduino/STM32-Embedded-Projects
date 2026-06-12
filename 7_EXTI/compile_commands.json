@@ -28,6 +28,24 @@
       "-Iinclude/CMSIS/Include/",
       "-Isrc/Drivers/",
       "-o",
+      "obj/stm32f103_startscrtch.o",
+      "src/stm32f103_startscrtch.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/7_EXTI",
+    "file": "/home/widar/EmbeddedProjects/7_EXTI/src/stm32f103_startscrtch.c",
+    "output": "/home/widar/EmbeddedProjects/7_EXTI/obj/stm32f103_startscrtch.o"
+  },
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-Iinclude/CMSIS/Device/ST/STM32F1xx/Include/",
+      "-Iinclude/CMSIS/Include/",
+      "-Isrc/Drivers/",
+      "-o",
       "obj/Drivers/EXTI.o",
       "src/Drivers/EXTI.c"
     ],

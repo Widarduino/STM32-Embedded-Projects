@@ -149,8 +149,8 @@ void Default_Handler(void) {
 
 void Reset_Handler(void) {
   // calculate information size
-  uint32_t data_mem_size = (uint32_t)&_edata - (uint32_t)&_sdata;
-  uint32_t bss_mem_size = (uint32_t)&_ebss - (uint32_t)&_sbss;
+  uint32_t data_mem_size = ((uint32_t)&_edata - (uint32_t)&_sdata)/4; // size in bytes
+  uint32_t bss_mem_size = ((uint32_t)&_ebss - (uint32_t)&_sbss)/4;
 
   // initizlize pointers to source and location of data
   uint32_t *p_src_mem = (uint32_t *)&_etext; // take address for end of flash
