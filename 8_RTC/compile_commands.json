@@ -10,11 +10,101 @@
       "-Iinclude/CMSIS/Include/",
       "-Isrc/Drivers/",
       "-o",
+      "obj/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/8_RTC",
+    "file": "/home/widar/EmbeddedProjects/8_RTC/src/main.c",
+    "output": "/home/widar/EmbeddedProjects/8_RTC/obj/main.o"
+  },
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-Iinclude/CMSIS/Device/ST/STM32F1xx/Include/",
+      "-Iinclude/CMSIS/Include/",
+      "-Isrc/Drivers/",
+      "-o",
+      "obj/stm32f103_startscrtch.o",
+      "src/stm32f103_startscrtch.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/8_RTC",
+    "file": "/home/widar/EmbeddedProjects/8_RTC/src/stm32f103_startscrtch.c",
+    "output": "/home/widar/EmbeddedProjects/8_RTC/obj/stm32f103_startscrtch.o"
+  },
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-Iinclude/CMSIS/Device/ST/STM32F1xx/Include/",
+      "-Iinclude/CMSIS/Include/",
+      "-Isrc/Drivers/",
+      "-o",
+      "obj/Drivers/GPIO.o",
+      "src/Drivers/GPIO.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/8_RTC",
+    "file": "/home/widar/EmbeddedProjects/8_RTC/src/Drivers/GPIO.c",
+    "output": "/home/widar/EmbeddedProjects/8_RTC/obj/Drivers/GPIO.o"
+  },
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-Iinclude/CMSIS/Device/ST/STM32F1xx/Include/",
+      "-Iinclude/CMSIS/Include/",
+      "-Isrc/Drivers/",
+      "-o",
       "obj/Drivers/RTC.o",
       "src/Drivers/RTC.c"
     ],
     "directory": "/home/widar/EmbeddedProjects/8_RTC",
     "file": "/home/widar/EmbeddedProjects/8_RTC/src/Drivers/RTC.c",
     "output": "/home/widar/EmbeddedProjects/8_RTC/obj/Drivers/RTC.o"
+  },
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-Iinclude/CMSIS/Device/ST/STM32F1xx/Include/",
+      "-Iinclude/CMSIS/Include/",
+      "-Isrc/Drivers/",
+      "-o",
+      "obj/Drivers/SPI.o",
+      "src/Drivers/SPI.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/8_RTC",
+    "file": "/home/widar/EmbeddedProjects/8_RTC/src/Drivers/SPI.c",
+    "output": "/home/widar/EmbeddedProjects/8_RTC/obj/Drivers/SPI.o"
+  },
+  {
+    "arguments": [
+      "/opt/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m3",
+      "-mthumb",
+      "-std=gnu11",
+      "-Iinclude/CMSIS/Device/ST/STM32F1xx/Include/",
+      "-Iinclude/CMSIS/Include/",
+      "-Isrc/Drivers/",
+      "-o",
+      "obj/Drivers/UART.o",
+      "src/Drivers/UART.c"
+    ],
+    "directory": "/home/widar/EmbeddedProjects/8_RTC",
+    "file": "/home/widar/EmbeddedProjects/8_RTC/src/Drivers/UART.c",
+    "output": "/home/widar/EmbeddedProjects/8_RTC/obj/Drivers/UART.o"
   }
 ]
