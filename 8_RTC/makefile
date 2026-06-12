@@ -1,6 +1,6 @@
 #currently makefile crashes without manual creation of ./obj/Drivers/ include this somehow
 CC = arm-none-eabi-gcc
-CFLAGS = -mcpu=cortex-m3 -mthumb -std=gnu11 -Iinclude/CMSIS/Device/ST/STM32F1xx/Include/ -Iinclude/CMSIS/Include/ -Isrc/Drivers/
+CFLAGS = -mcpu=cortex-m3 -g -mthumb -std=gnu11 -Iinclude/CMSIS/Device/ST/STM32F1xx/Include/ -Iinclude/CMSIS/Include/ -Isrc/Drivers/
 LFLAGS = -nostdlib -T 
 LINKER = stm32f103scrtch.ld
 OUTPUT = run
@@ -17,7 +17,7 @@ DRIVERS=$(wildcard $(DRIVER)/*.c)
 DRIVER_OBJS=$(patsubst $(DRIVER)/%.c, $(DRIVER_OBJ)/%.o, $(DRIVERS))
 
 $(OUTPUT): $(SRC_OBJS) $(DRIVER_OBJS)
-	$(CC) $(LFLAGS) $(LINKER) -Wl,-Map=$(OBJ)/debug.map $(SRC_OBJS) $(DRIVER_OBJS) -o $(OUTPUT).elf 
+	$(CC) $(LFLAGS) $(LINKER) -g -Wl,-Map=$(OBJ)/debug.map $(SRC_OBJS) $(DRIVER_OBJS) -o $(OUTPUT).elf 
 
 $(OBJ)/%.o: $(SRC)/%.c
 	$(CC) -c $(CFLAGS) $< -o $@

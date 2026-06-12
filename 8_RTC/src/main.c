@@ -30,6 +30,11 @@ static void RTC_CALLBACK(void){
 }
 
 void RTC_IRQHandler(void){
-	RTC->CRL &= ~(RTC_CRL_SECF);
-  RTC_CALLBACK();
+  if (RTC->CRL & RTC_CRL_SECF){
+
+    while(!(RTC->CRL & RTC_CRL_RTOFF)); // ensure its possible to write to RTC registers
+    RTC->CRL &= ~(RTC_CRL_SECF);
+    while(!(RTC->CRL & RTC_CRL_RTOFF));
+    RTC_CALLBACK();
+  }
 }

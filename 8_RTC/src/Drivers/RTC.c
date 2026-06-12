@@ -22,9 +22,9 @@ void initRTC(void){
 	RCC->BDCR |= RCC_BDCR_RTCSEL_LSE; // use LSE as RTC clock
 	
 	
-
 	RCC->BDCR |= RCC_BDCR_RTCEN; // enable RTC Clock
-	RTC->CRL &= ~(RTC_CRL_RSF);
+
+	RTC->CRL &= ~(RTC_CRL_RSF); // clear sync flag
 	while(!(RTC->CRL & RTC_CRL_RSF)){} // wait for synchro
 	
 	while (!(RTC->CRL & RTC_CRL_RTOFF)){} // poll the RT until its ready
@@ -35,13 +35,15 @@ void initRTC(void){
 	RTC->PRLL = 0x7FFF;
 	// RTC->CRL &= ~(RTC_CRL_SECF)
 	// the DIV register shows progress towards PRLL
+
+	RTC->CRH |= RTC_CRH_SECIE; // second interupt enabled
 	
 	RTC->CRL &= ~(RTC_CRL_CNF); // exit config mode
 	while (!(RTC->CRL & RTC_CRL_RTOFF)){} // poll the RT until its ready
 	
 
+	while (!(RTC->CRL & RTC_CRL_RTOFF)){} // poll the RT until its ready
 	RTC->CRL &= ~(RTC_CRL_SECF); // reset interupt flag incase
-	RTC->CRH |= RTC_CRH_SECIE; // second interupt enabled
 	while (!(RTC->CRL & RTC_CRL_RTOFF)){} // poll the RT until its ready
 
 	NVIC_EnableIRQ(RTC_IRQn);
